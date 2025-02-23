@@ -9,7 +9,6 @@ app = FastAPI()
 @app.get("/graph")
 def get_graph(response: Response, loc_id: Union[int, None] = None, time_from: Union[str, None] = None, time_to: Union[str, None] = None):
     if loc_id == None or time_from == None or time_to == None:
-        print("Hi")
         response.status_code = status.HTTP_400_BAD_REQUEST
         return response
     
